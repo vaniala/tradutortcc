@@ -79,13 +79,13 @@ def index(request):
     string_search = request.GET.get('search_box2')
     if string_search is not None:
         dados = particionar(string_search)
-        print dados[0]
-        print dados[1]
-        print dados[2]
-        print dados[3]
-        print dados[4]
-        sinais = Sinal.objects.get(configuracao_da_mao=dados[0], ponto_de_articulacao=dados[1], movimento=dados[2], orientacao_das_maos=dados[3],
-                                  expressao_facil_corporal=dados[4])
-        print sinais.nome
+        if len(dados) == 5:
+            sinais = Sinal.objects.get(configuracao_da_mao=dados[0], ponto_de_articulacao=dados[1], movimento=dados[2],
+                                       orientacao_das_maos=dados[3],
+                                       expressao_facil_corporal=dados[4])
+        else:
+            sinais = None
+
+
 
     return render(request, 'index.html', {"sinal": sinais})

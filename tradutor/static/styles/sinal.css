@@ -17,3 +17,25 @@ dd{
     margin-left: 20px;
 }
 
+.header,
+.content,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.header {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/*#id_co, #id_pa, #id_o, #id_m, #id_nome, #id_efc{*/
+    /*border-radius:4px;*/
+    /*-moz-border-radius:4px;*/
+    /*-webkit-border-radius:4px;*/
+    /*!*box-shadow: 1px 1px 2px #333333;*!*/
+    /*!*-moz-box-shadow: 1px 1px 2px #333333;*!*/
+    /*!*-webkit-box-shadow: 1px 1px 2px #333333;*!*/
+    /*!*background: #cccccc;*!*/
+    /*border:1px solid #000000;*/
+    /*width:150px*/
+/*}*/

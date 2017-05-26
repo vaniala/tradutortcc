@@ -4,20 +4,19 @@
         <div class="header">
         <ul class="nav nav-pills pull-right">
             <li class=""><a href="{% url 'registrar' %}">Registrar</a></li>
+            <li class=""><a href="sinais/">Sinais</a></li>
+
         </ul>
         <h1 class="text-muted centro">Tradutor de Libras</h1>
     </div>
 
- <br><br><br><br><br><br><br><br>
+ <br><br>
 
      <form class="navbar-form navbar-left" action="." method="get">
-                     <ul class="list-inline">
-                  <li style="display:inline-table"><input id="search_box2" name="search_box2" type="text" placeholder="Bitmask..." class="form-control"></li>
-                  <li style="display:inline-table">        <button type="submit" class="btn btn-success form-control"><span class="glyphicon glyphicon-search"></span></button>
-</li>
-
-
-                     </ul>
+         <ul class="list-inline">
+            <li style="display:inline-table"><input id="search_box2" name="search_box2" type="text" placeholder="Bitmask..." class="form-control"></li>
+            <li style="display:inline-table"><button type="submit" class="btn btn-success form-control"><span class="glyphicon glyphicon-search"></span></button></li>
+         </ul>
     </form>
 
 
@@ -28,8 +27,9 @@
                 <h4><a href="{{ sinal.sinal_url }}">{{ sinal.nome }}</a></h4>
               </li>
             </ul>
-    {% else %}
-        <p>Nenhum Sinal encontrado</p>
-    {% endif %}
+        {% else %}
+            <p>Nenhum Sinal encontrado</p>
+        {% endif %}
 
 {% endblock %}
+
