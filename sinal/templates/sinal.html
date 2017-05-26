@@ -2,12 +2,12 @@
 
 {% block body %}
         <div class="header">
-        <center><h1 class="text-muted">Detalhe do Sinal</h1></center>
+        <h1 class="text-muted centro">Detalhe do Sinal</h1>
     </div>
 
 <div class="row">
     <div class="col-lg-12">
-        <h2 style="margin-top:0">Nome do Sinal: {{sinal.nome }}</h2>
+        <h2 style="margin-top:0">{{sinal.nome }}</h2>
 
         <dl>
             <dt>Parâmetros Primários</dt>
@@ -18,9 +18,13 @@
                 <dd> Orientação das mãos (O): {{ sinal.orientacao_das_maos }}</dd>
                 <dd> Expressão facil/corporal (EFC): {{sinal.expressao_facil_corporal}}</dd>
         </dl>
+        <li class=""><a href="{% url 'editar' sinal.id %}">Editar</a></li>
+
 {#             configuracao da mao: {{sinal.configuracao_da_mao}}, ponto de articulacao: {{sinal.ponto_de_articulacao}},#}
 {#   movimento: {{sinal.movimento}}, orientacao das maos: {{ sinal.orientacao_das_maos }},#}
 {#   expressao facil corporal: {{sinal.expressao_facil_corporal}}#}
     </div>
 </div>
 {% endblock %}
+
+

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block body %}
+    <!-- search form -->
+    <form class="navbar-form navbar-right" action="." method="get">
+        <input id="search_box" name="search_box" type="text" placeholder="Search..." class="form-control">
+        <button type="submit" class="btn btn-success form-control"><span class="glyphicon glyphicon-search"></span></button>
+    </form>
+
+    <h1>Todos Sinais</h1>
+    {% if sinais %}
+        {% for sinal in sinais %}
+            <ul class="list-group">
+              <li class="list-group-item">
+                <h4><a href="{{ sinal.sinal_url }}">{{ sinal.nome }}</a></h4>
+              </li>
+            </ul>
+        {% endfor %}
+    {% else %}
+        <p>Nenhum Sinal encontrado</p>
+    {% endif %}
+{% endblock %}
+

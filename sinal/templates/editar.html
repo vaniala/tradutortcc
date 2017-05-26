@@ -1,0 +1,70 @@
+{% extends "base_registro.html" %}
+
+{% block body %}
+
+  <form class="form-signin" action="{% url 'editar'  sinal.id %}" method="post">
+          {% csrf_token %}
+
+
+    <h2 class="form-signin-heading">Alterar {{sinal.nome }}</h2>
+
+		<div class="control-group">
+			<label for="codigo" class="control-label">Configuração de Mão</label>
+			<div class="controls">
+                <input type="text" id="id_co" name="configuracao_da_mao" class="form-control" placeholder="Configuração de Mão" value="{{sinal.configuracao_da_mao}}" required autofocus>
+            </div>
+		</div>
+
+		<div class="control-group">
+			<label for="nome" class="control-label">Ponto de articulação</label>
+			<div class="controls">
+    <input type="text" id="id_pa" name="ponto_de_articulacao" class="form-control" placeholder="Ponto de articulação" value="{{sinal.ponto_de_articulacao}}" required >
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label for="d_nasc" class="control-label">Movimento</label>
+			<div class="controls">
+    <input type="text" id="id_m" name="movimento" class="form-control" placeholder="Movimento" value="{{sinal.movimento}}" required>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label for="cpf" class="control-label">Orientação das mãos</label>
+			<div class="controls">
+    <input type="text" id="id_o" name="orientacao_das_maos" class="form-control" placeholder="Orientação das mãos" value="{{sinal.orientacao_das_maos}}" required>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label for="telefone" class="control-label">Expressão facil/corporal</label>
+			<div class="controls">
+    <input type="text" id="id_efc" name="expressao_facil_corporal" class="form-control" placeholder="Expressão facil/corporal" value="{{sinal.expressao_facil_corporal}}" required>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label for="endereco" class="control-label">Nome</label>
+			<div class="controls">
+          <input type="text" id="id_nome" name="nome" class="form-control" placeholder="Nome" value="{{form.nome.value}}" required>
+			</div>
+		</div>
+  <hr />
+
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit" value="Login">Editar</button>
+
+
+		</div>
+
+   {% if form.errors %}
+      <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        {{form.non_field_errors}}
+      </div>
+    {% endif %}
+
+  </form>
+
+{% endblock %}
+

@@ -1,0 +1,41 @@
+{% extends "base_registro.html" %}
+
+{% block body %}
+
+  <form class="form-signin" action="{% url 'editar'  sinal.id %}" method="post">
+
+        {% csrf_token %}
+
+
+    <h2 class="form-signin-heading">Editar {{sinal.nome }}</h2>
+
+    <input type="text" id="id_co" name="configuracao_da_mao" class="form-control" placeholder="Configuração de Mão" value="{{sinal.configuracao_da_mao}}" required autofocus>
+
+    <input type="text" id="id_pa" name="ponto_de_articulacao" class="form-control" placeholder="Ponto de articulação" value="{{sinal.ponto_de_articulacao}}" required >
+
+    <input type="text" id="id_m" name="movimento" class="form-control" placeholder="M - Movimento" value="{{sinal.movimento}}" required>
+
+    <hr />
+
+    <input type="text" id="id_o" name="orientacao_das_maos" class="form-control" placeholder="Orientação das mãos" value="{{sinal.orientacao_das_maos}}" required>
+
+    <input type="text" id="id_efc" name="expressao_facil_corporal" class="form-control" placeholder="Expressão facil/corporal" value="{{sinal.expressao_facil_corporal}}" required>
+
+    <hr />
+
+{#          <input type="text" id="id_nome" name="nome" class="form-control" placeholder="Nome" value="{{form.nome.value}}" required>#}
+<hr />
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit" value="Login">Editar</button>
+
+  <hr/>
+       {% if form.errors %}
+      <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        {{form.non_field_errors}}
+      </div>
+    {% endif %}
+
+  </form>
+
+{% endblock %}

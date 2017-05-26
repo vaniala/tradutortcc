@@ -11,17 +11,20 @@ class Sinal(models.Model):
     expressao_facil_corporal = models.CharField(max_length=5, null=False)
     nome = models.CharField(max_length=255, null=False)
 
-    def particionar(self, bitmask):
-        i, l = 0, []
-        while bitmask[i:i + 4]:
-            l.append(bitmask[i:i + 4])
-            i += 4
-        # self.configuracao_da_mao = l[0]
-        # self.ponto_de_articulacao = l[1]
-        # self.movimento = l[2]
-        # self.orientacao_das_maos = l[3]
-        # self.expressao_facil_corporal = l[4]
-        return l
+    def sinal_url(self):
+        return u"/sinais/%i" % self.id
+
+    # def particionar(self, bitmask):
+    #     i, l = 0, []
+    #     while bitmask[i:i + 4]:
+    #         l.append(bitmask[i:i + 4])
+    #         i += 4
+    #     # self.configuracao_da_mao = l[0]
+    #     # self.ponto_de_articulacao = l[1]
+    #     # self.movimento = l[2]
+    #     # self.orientacao_das_maos = l[3]
+    #     # self.expressao_facil_corporal = l[4]
+    #     return l
 
 
 # def get_bitmask_traduzido(request):

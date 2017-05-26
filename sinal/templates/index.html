@@ -2,37 +2,34 @@
 
 {% block body %}
         <div class="header">
-        <center><h1 class="text-muted">Tradutor de Libras</h1></center>
+        <ul class="nav nav-pills pull-right">
+            <li class=""><a href="{% url 'registrar' %}">Registrar</a></li>
+        </ul>
+        <h1 class="text-muted centro">Tradutor de Libras</h1>
     </div>
 
  <br><br><br><br><br><br><br><br>
 
-    <center>
-        <form>
-        <input type="text" name="bitMask" value="" placeholder="BITMASK">
-        <br>
-        <br>
-        <input type="submit" value="Traduzir">
-        </form>
-    </center>
+     <form class="navbar-form navbar-left" action="." method="get">
+                     <ul class="list-inline">
+                  <li style="display:inline-table"><input id="search_box2" name="search_box2" type="text" placeholder="Bitmask..." class="form-control"></li>
+                  <li style="display:inline-table">        <button type="submit" class="btn btn-success form-control"><span class="glyphicon glyphicon-search"></span></button>
+</li>
+
+
+                     </ul>
+    </form>
+
 
         <br><br><br><br><br><br><br><br>
-<div class="col-lg-12">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <strong>Todos os Sinais Disponíveis</strong>
-        </div>
-          {% if sinais %}
-            <ul>
-                {% for sinal in sinais %}
-                    <li>
-                        <a href="{% url 'exibir' sinal.id %}">{{ sinal.nome|upper }}</a>
-                    </li>
-                {% endfor %}
+        {% if sinal %}
+            <ul class="list-group">
+              <li class="list-group-item">
+                <h4><a href="{{ sinal.sinal_url }}">{{ sinal.nome }}</a></h4>
+              </li>
             </ul>
-        {% else %}
-            <p>Nenhum Sinal encontrado</p>
-        {% endif %}
-    </div>
-</div>
+    {% else %}
+        <p>Nenhum Sinal encontrado</p>
+    {% endif %}
+
 {% endblock %}
