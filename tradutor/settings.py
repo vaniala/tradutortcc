@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     # http://whitenoise.evans.io/en/stable/django.html#using-whitenoise-in-development
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
+    'sinal'
 ]
 
 MIDDLEWARE = [
@@ -79,8 +80,13 @@ WSGI_APPLICATION = 'tradutor.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'sinal',
+        # 'NAME': os.path.join(BASE_DIR, 'mydb'),
+        'USER': 'vania',
+        'PASSWORD': '26283005',
+        'HOST': '127.0.0.1',
+        'PORT': '', # 8000 is default
     }
 }
 
