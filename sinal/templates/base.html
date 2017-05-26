@@ -1,0 +1,20 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="{% static "styles/bootstrap.css" %}" rel="stylesheet">
+    <link href="{% static "styles/main.css" %}" rel="stylesheet">
+      <link href="{% static "styles/sinal.css" %}" rel="stylesheet">
+
+    <title>Tradutor de libras</title>
+  </head>
+  <body>
+      <div class="row content">
+         {% block body %}
+         {% endblock %}
+      </div>
+    </div>
+  </body>
+</html>

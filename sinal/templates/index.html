@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block body %}
+        <div class="header">
+        <center><h1 class="text-muted">Tradutor de Libras</h1></center>
+    </div>
+
+ <br><br><br><br><br><br><br><br>
+
+    <center>
+        <form>
+        <input type="text" name="bitMask" value="" placeholder="BITMASK">
+        <br>
+        <br>
+        <input type="submit" value="Traduzir">
+        </form>
+    </center>
+
+        <br><br><br><br><br><br><br><br>
+<div class="col-lg-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <strong>Todos os Sinais Disponíveis</strong>
+        </div>
+          {% if sinais %}
+            <ul>
+                {% for sinal in sinais %}
+                    <li>
+                        <a href="{% url 'exibir' sinal.id %}">{{ sinal.nome|upper }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Nenhum Sinal encontrado</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
