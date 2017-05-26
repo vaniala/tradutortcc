@@ -2,7 +2,7 @@ from django import forms
 from django.db import models
 
 # from django.contrib.auth.models import Sinal
-from sinais.models import Sinal
+from sinal.models import Sinal
 
 
 class RegistrarSinalForm(forms.Form):
@@ -28,6 +28,6 @@ class RegistrarSinalForm(forms.Form):
         return valid
 
 
-def adiciona_erro(self, message):
-    errors = self._errors.setdefault(forms.forms.NON_FIELD_ERRORS, forms.utils.ErrorList())
-    errors.append(message)
+    def adiciona_erro(self, message):
+        errors = self._errors.setdefault(forms.forms.NON_FIELD_ERRORS, forms.utils.ErrorList())
+        errors.append(message)
